@@ -1,0 +1,129 @@
+<?php
+
+namespace Cissee\Webtrees\Module\ClippingsCart;
+
+use Aura\Router\Route;
+use Illuminate\Support\Collection;
+use Cissee\WebtreesExt\Module\ClippingsCartModule;
+use Fisharebest\Webtrees\Gedcom;
+use Fisharebest\Webtrees\GedcomRecord;
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Module\ModuleConfigInterface;
+use Fisharebest\Webtrees\Module\ModuleConfigTrait;
+use Fisharebest\Webtrees\Module\ModuleCustomInterface;
+use Fisharebest\Webtrees\Module\ModuleCustomTrait;
+use Fisharebest\Webtrees\Module\ModuleMenuInterface;
+use Fisharebest\Webtrees\Services\UserService;
+use Fisharebest\Webtrees\Session;
+use Fisharebest\Webtrees\Tree;
+use Vesta\Hook\HookInterfaces\FunctionsClippingsCartUtils;
+use Vesta\VestaModuleTrait;
+
+class ClippingsCartModuleExtended extends ClippingsCartModule implements 
+  ModuleCustomInterface, 
+  ModuleConfigInterface, 
+  ModuleMenuInterface {
+
+  use ModuleCustomTrait, ModuleConfigTrait, VestaModuleTrait {
+    VestaModuleTrait::customTranslations insteadof ModuleCustomTrait;
+    VestaModuleTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
+    VestaModuleTrait::getAssetAction insteadof ModuleCustomTrait;
+    VestaModuleTrait::assetUrl insteadof ModuleCustomTrait;
+    
+    VestaModuleTrait::getConfigLink insteadof ModuleConfigTrait;
+  }
+  
+  use ClippingsCartModuleTrait;
+  
+  public function __construct(UserService $user_service) {
+    parent::__construct($user_service);
+  }
+
+  public function customModuleAuthorName(): string {
+    return 'Richard Cissée';
+  }
+
+  public function customModuleVersion(): string {
+    return file_get_contents(__DIR__ . '/latest-version.txt');
+  }
+
+  public function customModuleLatestVersionUrl(): string {
+    return 'https://raw.githubusercontent.com/vesta-webtrees-2-custom-modules/vesta_clippings_cart/master/latest-version.txt';
+  }
+
+  public function customModuleSupportUrl(): string {
+    return 'https://cissee.de';
+  }
+
+  public function description(): string {
+    return $this->getShortDescription();
+  }
+
+  /**
+   * Where does this module store its resources
+   *
+   * @return string
+   */
+  public function resourcesFolder(): string {
+    return __DIR__ . '/resources/';
+  }
+  
+  /**
+   * Bootstrap the module
+   */
+  public function onBoot(): void {
+  }
+  
+  protected function menuTitle(): string {
+    return $this->getMenuTitle(I18N::translate("Clippings Cart"));
+  }
+  
+  protected function getAddToClippingsCartRoute(Route $route, Tree $tree): ?string {
+    $ret = parent::getAddToClippingsCartRoute($route, $tree);
+    if ($ret != null) {
+      return $ret;
+    }
+    
+    return FunctionsClippingsCartUtils::getAddToClippingsCartRoute($this, $route, $tree);
+  }
+  
+  protected function getDirectLinkTypes(Tree $tree): Collection {
+    $types = new Collection(["OBJE", "NOTE","SOUR","REPO"]);
+    return $types->merge(FunctionsClippingsCartUtils::getDirectLinkTypes($this, $tree));
+  }
+  
+  protected function getIndirectLinks(GedcomRecord $record): Collection {
+    return FunctionsClippingsCartUtils::getIndirectLinks($this, $record);
+  }
+  
+  //note that we don't bother adjusting
+  //$cart = Session::get('cart', []);
+  //
+  //i.e. cart filled via this module is the same as cart filled via original module
+
+  public function addRecordToCart(GedcomRecord $record): void
+  {
+      $cart = Session::get('cart', []);
+
+      $tree_name = $record->tree()->name();
+
+      // Add this record
+      $cart[$tree_name][$record->xref()] = true;
+
+      //[RC] adjusted
+      // Add directly linked types.
+      preg_match_all('/\n\d (?:' . $this->getDirectLinkTypes($record->tree())->implode("|") . ') @(' . Gedcom::REGEX_XREF . ')@/', $record->gedcom(), $matches);
+      
+      //TODO: this misses indirectly linked shared places!
+      
+      foreach ($matches[1] as $match) {
+          $cart[$tree_name][$match] = true;
+      }
+
+      foreach ($this->getIndirectLinks($record) as $match) {
+          $cart[$tree_name][$match] = true;
+      }
+      
+      Session::put('cart', $cart);
+  }
+}
