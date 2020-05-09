@@ -72,6 +72,7 @@ class ClippingsCartModuleExtended extends ClippingsCartModule implements
    * Bootstrap the module
    */
   public function onBoot(): void {
+    $this->flashWhatsNew('\Cissee\Webtrees\Module\ClippingsCart\WhatsNew', 1);
   }
   
   protected function menuTitle(): string {
