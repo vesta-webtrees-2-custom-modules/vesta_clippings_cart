@@ -2,6 +2,7 @@
 
 namespace Cissee\Webtrees\Module\ClippingsCart;
 
+use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\I18N;
 use Vesta\ControlPanelUtils\Model\ControlPanelCheckbox;
 use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
@@ -15,13 +16,12 @@ trait ClippingsCartModuleTrait {
   }
 
   public function getShortDescription() {
-    return I18N::translate('Select records from your family tree and save them as a GEDCOM file. Replacement for the original \'Clippings Cart\' module.');
+    return MoreI18N::xlate('Select records from your family tree and save them as a GEDCOM file.') . " " . I18N::translate('Replacement for the original \'Clippings Cart\' module.');
   }
 
   protected function getFullDescription() {
     $description = array();
-    $description[] = 
-            /* I18N: Module Configuration */I18N::translate('Select records from your family tree and save them as a GEDCOM file.');
+    $description[] = $this->getShortDescription();
     return $description;
   }
 

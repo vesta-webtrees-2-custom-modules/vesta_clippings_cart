@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vesta package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: vesta 1.0\n"
+"Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
+"POT-Creation-Date: 2020-06-05 20:58+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ClippingsCartModuleTrait.php:15
+msgid "Vesta Clippings Cart"
+msgstr ""
+
+#: ClippingsCartModuleTrait.php:19
+msgid "Replacement for the original 'Clippings Cart' module."
+msgstr ""
+
+#. I18N: Configuration option
+#: ClippingsCartModuleTrait.php:31
+msgid "Displayed title"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClippingsCartModuleTrait.php:39
+#, php-format
+msgid "Include the %1$s symbol in the menu title"
+msgstr ""
+
+#. I18N: Module Configuration
+#: ClippingsCartModuleTrait.php:40
+msgid "Deselect in order to have the menu appear exactly as the original menu."
+msgstr ""
+
+#. I18N: Configuration option
+#: ClippingsCartModuleTrait.php:46
+msgid "General"
+msgstr ""
+
+#: WhatsNew/WhatsNew0.php:11
+msgid "Vesta Clippings Cart: A new custom module. May be used to add shared places to the clippings cart. Otherwise same functionality as original clippings cart."
+msgstr ""

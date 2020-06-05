@@ -3,11 +3,10 @@
 namespace Cissee\Webtrees\Module\ClippingsCart;
 
 use Aura\Router\Route;
-use Illuminate\Support\Collection;
 use Cissee\WebtreesExt\Module\ClippingsCartModule;
+use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\Gedcom;
 use Fisharebest\Webtrees\GedcomRecord;
-use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleConfigInterface;
 use Fisharebest\Webtrees\Module\ModuleConfigTrait;
 use Fisharebest\Webtrees\Module\ModuleCustomInterface;
@@ -16,6 +15,7 @@ use Fisharebest\Webtrees\Module\ModuleMenuInterface;
 use Fisharebest\Webtrees\Services\UserService;
 use Fisharebest\Webtrees\Session;
 use Fisharebest\Webtrees\Tree;
+use Illuminate\Support\Collection;
 use Vesta\Hook\HookInterfaces\FunctionsClippingsCartUtils;
 use Vesta\VestaModuleTrait;
 
@@ -76,7 +76,7 @@ class ClippingsCartModuleExtended extends ClippingsCartModule implements
   }
   
   protected function menuTitle(): string {
-    return $this->getMenuTitle(I18N::translate("Clippings Cart"));
+    return $this->getMenuTitle(MoreI18N::xlate("Clippings cart"));
   }
   
   protected function getAddToClippingsCartRoute(Route $route, Tree $tree): ?string {
