@@ -8,6 +8,7 @@ use Vesta\ControlPanelUtils\Model\ControlPanelCheckbox;
 use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
 use Vesta\ControlPanelUtils\Model\ControlPanelSection;
 use Vesta\ControlPanelUtils\Model\ControlPanelSubsection;
+use Vesta\ModuleI18N;
 
 trait ClippingsCartModuleTrait {
 
@@ -16,7 +17,11 @@ trait ClippingsCartModuleTrait {
   }
 
   public function getShortDescription() {
-    return MoreI18N::xlate('Select records from your family tree and save them as a GEDCOM file.') . " " . I18N::translate('Replacement for the original \'Clippings Cart\' module.');
+    $part2 = I18N::translate('Replacement for the original \'Clippings Cart\' module.');
+    if (!$this->isEnabled()) {
+      $part2 = ModuleI18N::translate($this, $part2);
+    }
+    return MoreI18N::xlate('Select records from your family tree and save them as a GEDCOM file.') . " " . $part2;
   }
 
   protected function getFullDescription() {
