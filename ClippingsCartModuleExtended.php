@@ -5,6 +5,7 @@ namespace Cissee\Webtrees\Module\ClippingsCart;
 use Aura\Router\Route;
 use Cissee\WebtreesExt\Module\ClippingsCartModule;
 use Cissee\WebtreesExt\MoreI18N;
+use Fisharebest\Webtrees\Factory;
 use Fisharebest\Webtrees\Gedcom;
 use Fisharebest\Webtrees\GedcomRecord;
 use Fisharebest\Webtrees\Module\ModuleConfigInterface;
@@ -88,6 +89,11 @@ class ClippingsCartModuleExtended extends ClippingsCartModule implements
     return FunctionsClippingsCartUtils::getIndirectLinks($this, $record);
   }
   
+  //see also webtrees issue #3181
+  protected function getTransitiveLinks(GedcomRecord $record): Collection {
+    return FunctionsClippingsCartUtils::getTransitiveLinks($this, $record);
+  }
+  
   //note that we don't bother adjusting
   //$cart = Session::get('cart', []);
   //
@@ -106,14 +112,22 @@ class ClippingsCartModuleExtended extends ClippingsCartModule implements
       // Add directly linked types.
       preg_match_all('/\n\d (?:' . $this->getDirectLinkTypes($record->tree())->implode("|") . ') @(' . Gedcom::REGEX_XREF . ')@/', $record->gedcom(), $matches);
       
-      //TODO: this misses indirectly linked shared places!
-      
       foreach ($matches[1] as $match) {
           $cart[$tree_name][$match] = true;
+          
+          $linkedRecord = Factory::gedcomRecord()->make($match, $record->tree());
+          foreach ($this->getTransitiveLinks($linkedRecord) as $match2) {
+            $cart[$tree_name][$match2] = true;
+          }
       }
 
       foreach ($this->getIndirectLinks($record) as $match) {
           $cart[$tree_name][$match] = true;
+          
+          $linkedRecord = Factory::gedcomRecord()->make($match, $record->tree());
+          foreach ($this->getTransitiveLinks($linkedRecord) as $match2) {            
+            $cart[$tree_name][$match2] = true;
+          }
       }
       
       Session::put('cart', $cart);
