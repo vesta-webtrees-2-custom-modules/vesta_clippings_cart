@@ -4,6 +4,7 @@ namespace Cissee\Webtrees\Module\ClippingsCart;
 
 use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\I18N;
+use Vesta\CommonI18N;
 use Vesta\ControlPanelUtils\Model\ControlPanelCheckbox;
 use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
 use Vesta\ControlPanelUtils\Model\ControlPanelSection;
@@ -13,7 +14,7 @@ use Vesta\ModuleI18N;
 trait ClippingsCartModuleTrait {
 
   protected function getMainTitle() {
-    return I18N::translate('Vesta Clippings Cart');
+    return CommonI18N::titleVestaClippingsCart();
   }
 
   public function getShortDescription() {
@@ -27,13 +28,17 @@ trait ClippingsCartModuleTrait {
   protected function getFullDescription() {
     $description = array();
     $description[] = $this->getShortDescription();
+    
+    $description[] = 
+            CommonI18N::requires1(CommonI18N::titleVestaCommon());
+    
     return $description;
   }
 
   protected function createPrefs() {
     $generalSub = array();
     $generalSub[] = new ControlPanelSubsection(
-            /* I18N: Configuration option */I18N::translate('Displayed title'),
+            CommonI18N::displayedTitle(),
             array(
         /*new ControlPanelCheckbox(
                 I18N::translate('Include the %1$s symbol in the module title', $this->getVestaSymbol()),
@@ -41,14 +46,14 @@ trait ClippingsCartModuleTrait {
                 'VESTA',
                 '1'),*/
         new ControlPanelCheckbox(
-                /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the menu title', $this->getVestaSymbol()),
-                /* I18N: Module Configuration */I18N::translate('Deselect in order to have the menu appear exactly as the original menu.'),
+                CommonI18N::vestaSymbolInClippingsCartTitle(),
+                CommonI18N::vestaSymbolInTitle2(),
                 'VESTA_MENU',
                 '1')));
 
     $sections = array();
     $sections[] = new ControlPanelSection(
-            /* I18N: Configuration option */I18N::translate('General'),
+            CommonI18N::general(),
             null,
             $generalSub);
 

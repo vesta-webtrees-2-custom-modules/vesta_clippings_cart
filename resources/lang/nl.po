@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-06-07 17:21+0200\n"
+"POT-Creation-Date: 2020-09-19 15:42+0200\n"
 "PO-Revision-Date: 2020-06-07 18:46+0200\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: \n"
@@ -17,35 +17,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3.1\n"
 
-#. I18N: Module Configuration
-#: ClippingsCartModuleTrait.php:40
-msgid "Deselect in order to have the menu appear exactly as the original menu."
-msgstr "Schakel de selectie uit om in het menu de naam van de oorspronkelijke module te blijven gebruiken."
-
-#. I18N: Configuration option
-#: ClippingsCartModuleTrait.php:31
-msgid "Displayed title"
-msgstr "Weergegeven titel"
-
-#. I18N: Configuration option
-#: ClippingsCartModuleTrait.php:46
-msgid "General"
-msgstr "Algemeen"
-
-#. I18N: Module Configuration
-#: ClippingsCartModuleTrait.php:39
-#, php-format
-msgid "Include the %1$s symbol in the menu title"
-msgstr "Het %1$s-symbool opnemen in de menutitel"
-
-#: ClippingsCartModuleTrait.php:19
+#: ClippingsCartModuleTrait.php:21
 msgid "Replacement for the original 'Clippings Cart' module."
 msgstr "Vervanging voor de oorspronkelijke module 'Stamboomknipsels'."
-
-#: ClippingsCartModuleTrait.php:15
-msgid "Vesta Clippings Cart"
-msgstr "Vesta Stamboomknipsels"
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Clippings Cart: A new custom module. May be used to add shared places to the clippings cart. Otherwise same functionality as original clippings cart."
 msgstr "Vesta Stamboomknipsels: een nieuwe aangepaste module. Kan worden gebruikt om gedeelde plaatsen toe te voegen aan de stamboomknipsels. Verder dezelfde functionaliteit als de oorspronkelijke stamboomknipsels."
+
+#~ msgid "Deselect in order to have the menu appear exactly as the original menu."
+#~ msgstr "Schakel de selectie uit om in het menu de naam van de oorspronkelijke module te blijven gebruiken."
+
+#~ msgid "Displayed title"
+#~ msgstr "Weergegeven titel"
+
+#~ msgid "General"
+#~ msgstr "Algemeen"
+
+#~ msgid "Include the %1$s symbol in the menu title"
+#~ msgstr "Het %1$s-symbool opnemen in de menutitel"
+
+#~ msgid "Vesta Clippings Cart"
+#~ msgstr "Vesta Stamboomknipsels"

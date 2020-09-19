@@ -7,52 +7,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-06-07 17:21+0200\n"
+"POT-Creation-Date: 2020-09-19 15:42+0200\n"
 "PO-Revision-Date: 2020-06-21 12:13+0200\n"
+"Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: \n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3.1\n"
-"Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"Language: cs\n"
 
-#: ClippingsCartModuleTrait.php:15
-msgid "Vesta Clippings Cart"
-msgstr "Vesta Clippings Cart"
-
-#: ClippingsCartModuleTrait.php:19
+#: ClippingsCartModuleTrait.php:21
 msgid "Replacement for the original 'Clippings Cart' module."
 msgstr "Náhrada za původní modul 'Clippings Cart'."
 
-#. I18N: Configuration option
-#: ClippingsCartModuleTrait.php:31
-msgid "Displayed title"
-msgstr "Zobrazený název"
-
-#. I18N: Module Configuration
-#: ClippingsCartModuleTrait.php:39
-#, php-format
-msgid "Include the %1$s symbol in the menu title"
-msgstr "Do názvu menu přidat symbol %1$s"
-
-#. I18N: Module Configuration
-#: ClippingsCartModuleTrait.php:40
-msgid "Deselect in order to have the menu appear exactly as the original menu."
-msgstr "Nezaškrtnout, má-li menu vypadat přesně stejně jako původní menu."
-
-#. I18N: Configuration option
-#: ClippingsCartModuleTrait.php:46
-msgid "General"
-msgstr "Všeobecné"
-
 #: WhatsNew/WhatsNew0.php:11
-msgid ""
-"Vesta Clippings Cart: A new custom module. May be used to add shared places "
-"to the clippings cart. Otherwise same functionality as original clippings "
-"cart."
-msgstr ""
-"Vesta Clippings Cart: Nový upravený modul. Může se použít k přidání "
-"sdílených míst do schránky výstřižků. Jinak pracuje stejně jako původní "
-"schránka výstřižků."
+msgid "Vesta Clippings Cart: A new custom module. May be used to add shared places to the clippings cart. Otherwise same functionality as original clippings cart."
+msgstr "Vesta Clippings Cart: Nový upravený modul. Může se použít k přidání sdílených míst do schránky výstřižků. Jinak pracuje stejně jako původní schránka výstřižků."
+
+#~ msgid "Deselect in order to have the menu appear exactly as the original menu."
+#~ msgstr "Nezaškrtnout, má-li menu vypadat přesně stejně jako původní menu."
+
+#~ msgid "Displayed title"
+#~ msgstr "Zobrazený název"
+
+#~ msgid "General"
+#~ msgstr "Všeobecné"
+
+#~ msgid "Include the %1$s symbol in the menu title"
+#~ msgstr "Do názvu menu přidat symbol %1$s"
+
+#~ msgid "Vesta Clippings Cart"
+#~ msgstr "Vesta Clippings Cart"
