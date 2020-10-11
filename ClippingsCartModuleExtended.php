@@ -5,7 +5,6 @@ namespace Cissee\Webtrees\Module\ClippingsCart;
 use Aura\Router\Route;
 use Cissee\WebtreesExt\Module\ClippingsCartModule;
 use Cissee\WebtreesExt\MoreI18N;
-use Fisharebest\Webtrees\Factory;
 use Fisharebest\Webtrees\Gedcom;
 use Fisharebest\Webtrees\GedcomRecord;
 use Fisharebest\Webtrees\Module\ModuleConfigInterface;
@@ -13,6 +12,7 @@ use Fisharebest\Webtrees\Module\ModuleConfigTrait;
 use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 use Fisharebest\Webtrees\Module\ModuleMenuInterface;
+use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Services\UserService;
 use Fisharebest\Webtrees\Session;
 use Fisharebest\Webtrees\Tree;
@@ -115,7 +115,7 @@ class ClippingsCartModuleExtended extends ClippingsCartModule implements
       foreach ($matches[1] as $match) {
           $cart[$tree_name][$match] = true;
           
-          $linkedRecord = Factory::gedcomRecord()->make($match, $record->tree());
+          $linkedRecord = Registry::gedcomRecordFactory()->make($match, $record->tree());
           foreach ($this->getTransitiveLinks($linkedRecord) as $match2) {
             $cart[$tree_name][$match2] = true;
           }
@@ -124,7 +124,7 @@ class ClippingsCartModuleExtended extends ClippingsCartModule implements
       foreach ($this->getIndirectLinks($record) as $match) {
           $cart[$tree_name][$match] = true;
           
-          $linkedRecord = Factory::gedcomRecord()->make($match, $record->tree());
+          $linkedRecord = Registry::gedcomRecordFactory()->make($match, $record->tree());
           foreach ($this->getTransitiveLinks($linkedRecord) as $match2) {            
             $cart[$tree_name][$match2] = true;
           }
