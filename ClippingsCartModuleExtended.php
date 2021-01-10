@@ -16,7 +16,6 @@ use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Services\UserService;
 use Fisharebest\Webtrees\Session;
 use Fisharebest\Webtrees\Tree;
-use Fisharebest\Webtrees\View;
 use Illuminate\Support\Collection;
 use Vesta\Hook\HookInterfaces\FunctionsClippingsCartUtils;
 use Vesta\VestaModuleTrait;
@@ -66,11 +65,6 @@ class ClippingsCartModuleExtended extends ClippingsCartModule implements
    */
   public function onBoot(): void {
     $this->flashWhatsNew('\Cissee\Webtrees\Module\ClippingsCart\WhatsNew', 1);
-    
-    //TEMP ONLY, remove once PR is accepted
-    // Replace an existing view with our own version.    
-    View::registerCustomView('::modules/clippings/show', $this->name() . '::modules/clippings/show');
-    View::registerCustomView('::modules/clippings/download', $this->name() . '::modules/clippings/download');
   }
   
   protected function menuTitle(): string {
