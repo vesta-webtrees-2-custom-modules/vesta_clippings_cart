@@ -2,6 +2,8 @@
 
 namespace Cissee\Webtrees\Module\ClippingsCart;
 
+use Cissee\WebtreesExt\Module\ModuleMetaInterface;
+use Cissee\WebtreesExt\Module\ModuleMetaTrait;
 use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Family;
@@ -29,19 +31,20 @@ use Vesta\VestaModuleTrait;
 use function redirect;
 
 class ClippingsCartModuleExtended extends ClippingsCartModule implements 
-  ModuleCustomInterface, 
+  ModuleCustomInterface,
+  ModuleMetaInterface, 
   ModuleConfigInterface, 
   ModuleMenuInterface,
   ClippingsCartAddToCartInterface {
 
-  use ModuleCustomTrait, ModuleConfigTrait, VestaModuleTrait {
+  use ModuleCustomTrait, ModuleMetaTrait, ModuleConfigTrait, VestaModuleTrait {
     VestaModuleTrait::title as trait_title;
     VestaModuleTrait::customTranslations insteadof ModuleCustomTrait;
-    VestaModuleTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
     VestaModuleTrait::getAssetAction insteadof ModuleCustomTrait;
-    VestaModuleTrait::assetUrl insteadof ModuleCustomTrait;
-    
+    VestaModuleTrait::assetUrl insteadof ModuleCustomTrait;    
     VestaModuleTrait::getConfigLink insteadof ModuleConfigTrait;
+    ModuleMetaTrait::customModuleVersion insteadof ModuleCustomTrait;
+    ModuleMetaTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
   }
   
   use ClippingsCartModuleTrait;
@@ -54,12 +57,12 @@ class ClippingsCartModuleExtended extends ClippingsCartModule implements
     return 'Richard Cissée';
   }
 
-  public function customModuleVersion(): string {
-    return file_get_contents(__DIR__ . '/latest-version.txt');
-  }
-
-  public function customModuleLatestVersionUrl(): string {
-    return 'https://raw.githubusercontent.com/vesta-webtrees-2-custom-modules/vesta_clippings_cart/master/latest-version.txt';
+  public function customModuleMetaDatasJson(): string {
+    return file_get_contents(__DIR__ . '/metadata.json');
+  } 
+  
+  public function customModuleLatestMetaDatasJsonUrl(): string {
+    return 'https://raw.githubusercontent.com/vesta-webtrees-2-custom-modules/vesta_clippings_cart/master/metadata.json';
   }
 
   public function customModuleSupportUrl(): string {
