@@ -270,4 +270,8 @@ class ClippingsCartModuleExtended extends ClippingsCartModule implements
   public function doAddFamilyToCart(Family $family): void {
     $this->addFamilyToCart($family);
   }
+  
+  public function doAddFamilyAndChildrenToCart(Family $family): void {
+    $this->addFamilyAndChildrenToCart($family);
+  }
 }
