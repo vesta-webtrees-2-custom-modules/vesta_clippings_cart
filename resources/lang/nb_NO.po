@@ -2,16 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vesta package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-19 15:42+0200\n"
+"POT-Creation-Date: 2022-04-03 20:22+0200\n"
 "PO-Revision-Date: 2020-12-09 11:29+0000\n"
 "Last-Translator: Thomas Rindal <thomas@rindal.net>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-clippings-cart/nb_NO/>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-clippings-cart/nb_NO/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +24,4 @@ msgstr "Erstatning for den opprinnelige 'Clippings Cart'-modulen."
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Clippings Cart: A new custom module. May be used to add shared places to the clippings cart. Otherwise same functionality as original clippings cart."
-msgstr ""
-"Vesta utklippshandlekurv: en ny tilpasset modul. Kan brukes til å legge til "
-"delte steder i utklippskurven. Ellers samme funksjonalitet som originale "
-"utklippshandlekurv."
+msgstr "Vesta utklippshandlekurv: en ny tilpasset modul. Kan brukes til å legge til delte steder i utklippskurven. Ellers samme funksjonalitet som originale utklippshandlekurv."

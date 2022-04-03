@@ -49,5 +49,9 @@ if (!$ok) {
   return;
 }
 
-return app(ClippingsCartModuleExtended::class);
+if (str_starts_with(Webtrees::VERSION, '2.1')) {
+    return app(ClippingsCartModuleExtended::class);
+}
+
+return app(ClippingsCartModuleExtended_20::class);
 
