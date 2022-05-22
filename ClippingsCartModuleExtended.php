@@ -24,10 +24,8 @@ use Fisharebest\Webtrees\Services\LinkedRecordService;
 use Fisharebest\Webtrees\Tree;
 use Fisharebest\Webtrees\Validator;
 use Illuminate\Support\Collection;
-use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Message\StreamFactoryInterface;
 use Vesta\Hook\HookInterfaces\ClippingsCartAddToCartInterface;
 use Vesta\Hook\HookInterfaces\FunctionsClippingsCartUtils;
 use Vesta\VestaModuleTrait;
@@ -53,15 +51,11 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleMenuInt
 
     public function __construct(
         GedcomExportService $gedcom_export_service,
-        LinkedRecordService $linked_record_service,
-        ResponseFactoryInterface $response_factory,
-        StreamFactoryInterface $stream_factory) {
+        LinkedRecordService $linked_record_service) {
 
         parent::__construct(
             $gedcom_export_service,
-            $linked_record_service,
-            $response_factory,
-            $stream_factory);
+            $linked_record_service);
     }
 
     public function customModuleAuthorName(): string {
