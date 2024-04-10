@@ -113,7 +113,7 @@ ModuleCustomInterface, ModuleMetaInterface, ModuleConfigInterface, ModuleMenuInt
      * @return ResponseInterface
      */
     public function getAddLocationAction(ServerRequestInterface $request): ResponseInterface {
-        
+
         $tree = Validator::attributes($request)->tree();
 
         $xref = $request->getQueryParams()['xref'] ?? '';

@@ -28,10 +28,10 @@ trait ClippingsCartModuleTrait {
   protected function getFullDescription() {
     $description = array();
     $description[] = $this->getShortDescription();
-    
-    $description[] = 
+
+    $description[] =
             CommonI18N::requires1(CommonI18N::titleVestaCommon());
-    
+
     return $description;
   }
 
