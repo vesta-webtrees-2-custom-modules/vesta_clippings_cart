@@ -1,8 +1,8 @@
 
 # ⚶ Vesta Clippings Cart (Webtrees 2 Custom Module)
 
-This [webtrees](https://www.webtrees.net/) custom module replaces the original 'Clippings Cart' module, allowing other custom modules to provide additional data to the clippings cart.  
-The project’s website is [cissee.de](https://cissee.de). 
+This [webtrees](https://www.webtrees.net/) custom module replaces the original 'Clippings Cart' module, allowing other custom modules to provide additional data to the clippings cart.
+The project’s website is [cissee.de](https://cissee.de).
 
 This is a webtrees 2.x module - It cannot be used with webtrees 1.x. There is no webtrees 1.x counterpart.
 
