@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-19 15:42+0200\n"
+"POT-Creation-Date: 2024-09-29 14:35+0200\n"
 "PO-Revision-Date: 2020-06-07 18:46+0200\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: \n"
@@ -16,6 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3.1\n"
+
+#: ClippingsCartModuleExtended.php:254
+#, php-format
+msgid "%s and her full ancestor branch"
+msgstr ""
+
+#: ClippingsCartModuleExtended.php:265
+#, php-format
+msgid "%s and his full ancestor branch"
+msgstr ""
 
 #: ClippingsCartModuleTrait.php:21
 msgid "Replacement for the original 'Clippings Cart' module."

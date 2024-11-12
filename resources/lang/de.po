@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vesta package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2024-09-29 14:35+0200\n"
 "PO-Revision-Date: 2020-10-18 15:26+0000\n"
 "Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-clippings-cart/de/>\n"
@@ -17,6 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.3.1-dev\n"
+
+#: ClippingsCartModuleExtended.php:254
+#, php-format
+msgid "%s and her full ancestor branch"
+msgstr ""
+
+#: ClippingsCartModuleExtended.php:265
+#, php-format
+msgid "%s and his full ancestor branch"
+msgstr ""
 
 #: ClippingsCartModuleTrait.php:21
 msgid "Replacement for the original 'Clippings Cart' module."
