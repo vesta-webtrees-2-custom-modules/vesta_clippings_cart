@@ -8,25 +8,26 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2024-09-29 14:35+0200\n"
-"PO-Revision-Date: 2020-10-18 15:26+0000\n"
-"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-clippings-cart/de/>\n"
+"PO-Revision-Date: 2025-07-22 02:02+0000\n"
+"Last-Translator: Holger Eisold <github@eisold.family>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-clippings-cart/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.1-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: ClippingsCartModuleExtended.php:254
 #, php-format
 msgid "%s and her full ancestor branch"
-msgstr ""
+msgstr "%s und ihr vollständiger Ahnenzweig"
 
 #: ClippingsCartModuleExtended.php:265
 #, php-format
 msgid "%s and his full ancestor branch"
-msgstr ""
+msgstr "%s und sein vollständiger Ahnenzweig"
 
 #: ClippingsCartModuleTrait.php:21
 msgid "Replacement for the original 'Clippings Cart' module."
