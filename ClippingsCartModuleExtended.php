@@ -25,6 +25,7 @@ use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Repository;
 use Fisharebest\Webtrees\Services\GedcomExportService;
 use Fisharebest\Webtrees\Services\LinkedRecordService;
+use Fisharebest\Webtrees\Services\PhpService;
 use Fisharebest\Webtrees\Session;
 use Fisharebest\Webtrees\Source;
 use Fisharebest\Webtrees\Submitter;
@@ -62,11 +63,13 @@ class ClippingsCartModuleExtended extends ClippingsCartModule implements
 
     public function __construct(
         GedcomExportService $gedcom_export_service,
-        LinkedRecordService $linked_record_service) {
+        LinkedRecordService $linked_record_service,
+        PhpService $php_service) {
 
         parent::__construct(
             $gedcom_export_service,
-            $linked_record_service);
+            $linked_record_service,
+            $php_service);
     }
 
     public function customModuleAuthorName(): string {
