@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2024-09-29 14:35+0200\n"
-"PO-Revision-Date: 2024-11-15 19:00+0000\n"
+"PO-Revision-Date: 2025-07-31 10:02+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-clippings-cart/nl/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.9-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: ClippingsCartModuleExtended.php:254
 #, php-format
@@ -35,7 +35,10 @@ msgstr "Vervanging voor de oorspronkelijke module 'Stamboomknipsels'."
 
 #: WhatsNew/WhatsNew0.php:11
 msgid "Vesta Clippings Cart: A new custom module. May be used to add shared places to the clippings cart. Otherwise same functionality as original clippings cart."
-msgstr "Vesta Stamboomknipsels: een nieuwe aangepaste module. Kan worden gebruikt om gedeelde plaatsen toe te voegen aan de stamboomknipsels. Verder dezelfde functionaliteit als de oorspronkelijke stamboomknipsels."
+msgstr ""
+"Vesta Stamboomknipsels: een nieuwe uitbreidingsmodule. Kan worden gebruikt "
+"om gedeelde plaatsen toe te voegen aan de stamboomknipsels. Verder dezelfde "
+"functionaliteit als de oorspronkelijke stamboomknipsels."
 
 #~ msgid "Deselect in order to have the menu appear exactly as the original menu."
 #~ msgstr "Schakel de selectie uit om in het menu de naam van de oorspronkelijke module te blijven gebruiken."
